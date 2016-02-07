@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -94,23 +93,23 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
         });
 
-        ParseQuery<ParseObject> query2 = ParseQuery.getQuery("route0");
-        query2.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> objects, ParseException e) {
-                // Get the one row
-                for (ParseObject o : objects) {
-                    //keys: id, stops, trace, name
-                    Object traces = o.get("traces");
-                    if (traces != null) {
-                        Log.d(TAG, traces.toString());
-                    }
-
-
-                }
-            }
-
-        });
+//        ParseQuery<ParseObject> query2 = ParseQuery.getQuery("route0");
+//        query2.findInBackground(new FindCallback<ParseObject>() {
+//            @Override
+//            public void done(List<ParseObject> objects, ParseException e) {
+//                // Get the one row
+//                for (ParseObject o : objects) {
+//                    //keys: id, stops, trace, name
+//                    Object traces = o.get("traces");
+//                    if (traces != null) {
+//                        Log.d(TAG, traces.toString());
+//                    }
+//
+//
+//                }
+//            }
+//
+//        });
 
         //testPlotLine();
 
