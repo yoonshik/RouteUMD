@@ -84,7 +84,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         }
         // Get back the mutable Polyline
         Polyline polyline = mMap.addPolyline(rectOptions);
-
+        
         mMap.addMarker(new MarkerOptions().position(coords[i]).title("Marker at destination"));
 
 
