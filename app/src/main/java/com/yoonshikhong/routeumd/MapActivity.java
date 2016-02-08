@@ -80,38 +80,36 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             public void done(List<ParseObject> objects, ParseException e) {
                 // Get the one row
                 for (ParseObject o : objects) {
-
-
                     String stopKey = o.get("key").toString();
                     LatLng c = new LatLng(Double.valueOf(o.get("lat").toString()), Double.valueOf(o.get("long").toString()));
                     if (!busStops.containsKey(stopKey)) {
                         busStops.put(stopKey, c);
-                        mMap.addMarker(new MarkerOptions().position(c).title(o.get("name").toString()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+                        mMap.addMarker(new MarkerOptions().position(c).title(o.get("name").toString()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
                     }
                 }
             }
 
         });
 
-        ParseQuery<ParseObject> query2 = ParseQuery.getQuery("route0");
-        query2.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> objects, ParseException e) {
-                // Get the one row
-                for (ParseObject o : objects) {
-                    //keys: id, stops, trace, name
-                    Object traces = o.get("traces");
-                    if (traces != null) {
-                        Log.d(TAG, traces.toString());
-                    }
+//        ParseQuery<ParseObject> query2 = ParseQuery.getQuery("route0");
+//        query2.findInBackground(new FindCallback<ParseObject>() {
+//            @Override
+//            public void done(List<ParseObject> objects, ParseException e) {
+//                // Get the one row
+//                for (ParseObject o : objects) {
+//                    //keys: id, stops, trace, name
+//                    Object traces = o.get("traces");
+//                    if (traces != null) {
+//                        Log.d(TAG, traces.toString());
+//                    }
+//
+//
+//                }
+//            }
+//
+//        });
 
-
-                }
-            }
-
-        });
-
-        //testPlotLine();
+        testPlotLine();
 
 
     }
